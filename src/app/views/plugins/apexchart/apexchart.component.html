@@ -1,0 +1,160 @@
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-body">
+                <div class="d-flex flex-wrap align-items-center justify-content-between">
+                    <div class="d-flex flex-wrap align-items-center">
+                        <div class="d-flex flex-wrap align-items-center mb-3 mb-sm-0">
+                          <h4 class="me-2 h4">Apexcharts</h4>
+                        </div>
+                    </div>
+                    <small>For more Information regarding Apexcharts Plugin refer
+                        <a href="https://apexcharts.com/">Documentation</a>
+                    </small>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-6">
+        <div class="card">
+            <div class="card-header d-flex justify-content-between">
+                <div class="header-title">
+                  <h4> Bar Chart</h4>
+                </div>
+            </div>
+            <div class="card-body text-center">
+                 <div id="bar_apexcharts">
+
+                 </div>
+                 <apx-chart *ngIf="chartShow" id="bar_apexcharts" [series]="chart1.series"
+                        [chart]="chart1.chart" [xaxis]="chart1.xaxis" [yaxis]="chart1.yaxis"
+                        [legend]="chart1.legend" [dataLabels]="chart1.dataLabels" [grid]="chart1.grid"
+                        [stroke]="chart1.stroke" [title]="chart1.title" [colors]="chart1.colors"
+                        [plotOptions]="chart1.plotOptions" [responsive]="chart1.responsive"
+                        [markers]="chart1.markers"></apx-chart>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <div class="card">
+            <div class="card-header d-flex justify-content-between">
+                <div class="header-title">
+                    <h4>Line Chart</h4>
+                </div>
+            </div>
+            <div class="card-body text-center">
+                <apx-chart *ngIf="chartShow" id="line_apexcharts" [series]="chart2.series"
+                        [chart]="chart2.chart" [xaxis]="chart2.xaxis" [yaxis]="chart2.yaxis"
+                        [legend]="chart2.legend" [dataLabels]="chart2.dataLabels" [grid]="chart2.grid"
+                        [stroke]="chart2.stroke" [title]="chart2.title" [colors]="chart2.colors"
+                        [plotOptions]="chart2.plotOptions" [responsive]="chart2.responsive"
+                        [markers]="chart2.markers"></apx-chart>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <div class="card">
+            <div class="card-header d-flex justify-content-between">
+                <div class="header-title">
+                    <h4>Timeline Chart</h4>
+                </div>
+            </div>
+            <div class="card-body text-center">
+                <apx-chart *ngIf="chartShow" id="timeline_apexcharts" [series]="chart3.series"
+                [chart]="chart3.chart" [xaxis]="chart3.xaxis" [yaxis]="chart3.yaxis"
+                [legend]="chart3.legend" [dataLabels]="chart3.dataLabels" [grid]="chart3.grid"
+                [stroke]="chart3.stroke" [title]="chart3.title" [colors]="chart3.colors"
+                [plotOptions]="chart3.plotOptions" [responsive]="chart3.responsive"
+                [markers]="chart3.markers"></apx-chart>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <div class="card">
+            <div class="card-header d-flex justify-content-between">
+                <div class="header-title">
+                 <h4>Pie Chart</h4>
+                </div>
+            </div>
+            <div class="card-body text-center">
+                <apx-chart *ngIf="chartShow" id="piecharts" [series]="chart4.series"
+                        [chart]="chart4.chart" [xaxis]="chart4.xaxis" [yaxis]="chart4.yaxis"
+                        [legend]="chart4.legend" [dataLabels]="chart2.dataLabels" [grid]="chart4.grid"
+                        [stroke]="chart4.stroke" [title]="chart4.title" [colors]="chart4.colors"
+                        [plotOptions]="chart4.plotOptions" [responsive]="chart4.responsive"
+                        [markers]="chart4.markers" [labels]="chart4.labels"></apx-chart>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <div class="card">
+            <div class="card-header d-flex justify-content-between">
+                <div class="header-title">
+                    <h4> Scatter</h4>
+                </div>
+            </div>
+            <div class="card-body text-center">
+                <apx-chart *ngIf="chartShow" id="Scatter_apexcharts" [series]="chart5.series"
+                        [chart]="chart5.chart" [xaxis]="chart5.xaxis" [yaxis]="chart5.yaxis"
+                        [legend]="chart5.legend" [dataLabels]="chart2.dataLabels" [grid]="chart5.grid"
+                        [stroke]="chart5.stroke" [title]="chart5.title" [colors]="chart5.colors"
+                        [plotOptions]="chart5.plotOptions" [responsive]="chart5.responsive"
+                        [markers]="chart5.markers"></apx-chart>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <div class="card">
+            <div class="card-header d-flex justify-content-between">
+                <div class="header-title">
+                    <h4>Radar Chart</h4>
+                </div>
+            </div>
+            <div class="card-body text-center">
+                <apx-chart *ngIf="chartShow" id="radar_apexcharts" [series]="chart6.series"
+                [chart]="chart6.chart" [xaxis]="chart6.xaxis" [yaxis]="chart6.yaxis"
+                [legend]="chart6.legend" [dataLabels]="chart2.dataLabels" [grid]="chart6.grid"
+                [stroke]="chart6.stroke" [title]="chart6.title" [colors]="chart6.colors"
+                [plotOptions]="chart6.plotOptions" [responsive]="chart6.responsive"
+                [markers]="chart6.markers"></apx-chart> 
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <div class="card">
+            <div class="card-header d-flex justify-content-between">
+                <div class="header-title">
+                    <h4> Polar Area Charts</h4>
+                </div>
+            </div>
+            <div class="card-body text-center">
+                <apx-chart *ngIf="chartShow" id="Polar_apexcharts" [series]="chart7.series"
+                [chart]="chart7.chart" [xaxis]="chart7.xaxis" [yaxis]="chart7.yaxis"
+                [legend]="chart7.legend" [dataLabels]="chart2.dataLabels" [grid]="chart7.grid"
+                [stroke]="chart7.stroke" [title]="chart7.title" [colors]="chart7.colors"
+                [plotOptions]="chart7.plotOptions" [responsive]="chart7.responsive"
+                [markers]="chart7.markers"></apx-chart> 
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <div class="card">
+            <div class="card-header d-flex justify-content-between">
+                <div class="header-title">
+                    <h4>Mixed</h4>
+                </div>
+            </div>
+            <div class="card-body text-center">
+                <div id="Mixed_apexcharts"></div>
+                <apx-chart *ngIf="chartShow" id="Mixed_apexcharts" [series]="chart8.series"
+                [chart]="chart8.chart" [xaxis]="chart8.xaxis" [yaxis]="chart8.yaxis"
+                [legend]="chart8.legend" [dataLabels]="chart2.dataLabels" [grid]="chart8.grid"
+                [stroke]="chart8.stroke" [title]="chart8.title" [colors]="chart8.colors"
+                [plotOptions]="chart8.plotOptions" [responsive]="chart8.responsive"
+                [markers]="chart8.markers"></apx-chart> 
+            </div>
+        </div>
+    </div>
+</div>

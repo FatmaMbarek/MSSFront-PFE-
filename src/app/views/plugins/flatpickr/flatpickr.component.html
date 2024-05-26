@@ -1,0 +1,180 @@
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-body">
+                <div class="d-flex flex-wrap align-items-center justify-content-between">
+                    <div class="d-flex flex-wrap align-items-center">
+                        <div class="d-flex flex-wrap align-items-center mb-3 mb-sm-0">
+                            <h4 class="me-2 h4">Flatpickr</h4>
+                        </div>
+                    </div>
+                    <small>For more Information regarding Flatpickr Plugin refer
+                        <a href="https://flatpickr.js.org/examples/">Documentation</a>
+                    </small>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-6">
+        <div class="card">
+            <div class="card-header d-flex justify-content-between">
+                <div class="header-title">
+                    <h4 class="card-title">Basic Date Time</h4>
+                    <p> flatpickr without any config</p>
+
+                </div>
+            </div>
+            <div class="card-body text-center">
+                <ng2-flatpickr placeholder="24 Jan 2022 : 02 : 00 : am " [config]="dateTimeOptions" addClass="form-control datetime_flatpicker flatpickr-input active"></ng2-flatpickr>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <div class="card">
+            <div class="card-header d-flex justify-content-between">
+                <div class="header-title">
+                    <h4 class="card-title">Selecting multiple dates</h4>
+                    <p> It is possible to select multiple dates.</p>
+
+                </div>
+            </div>
+            <div class="card-body text-center">
+                <ng2-flatpickr placeholder="24 Jan 2022 : 02 : 00 : am " [config]="multidateOptions" addClass="form-control _flatpicker flatpickr-input active"></ng2-flatpickr>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="col-lg-6">
+        <div class="card">
+            <div class="card-header d-flex justify-content-between">
+                <div class="header-title">
+                    <h4 class="card-title">minDate</h4>
+                    <p> minDate option specifies the minimum/earliest date (inclusively) allowed for selection.
+
+                    </p>
+
+                </div>
+            </div>
+            <div class="card-body text-center">
+                <ng2-flatpickr placeholder="24 Jan 2022 : 02 : 00 : am " [config]="minDateOptions" addClass="form-control minimum_flatpicker flatpickr-input active"></ng2-flatpickr>
+
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <div class="card">
+            <div class="card-header d-flex justify-content-between">
+                <div class="header-title">
+                    <h4 class="card-title">maxDate</h4>
+                    <p> maxDate option specifies the maximum/latest date (inclusively) allowed for selection.</p>
+
+                </div>
+            </div>
+            <div class="card-body text-center">
+                <ng2-flatpickr placeholder="24 Jan 2022 : 02 : 00 : am " [config]="minDateOptions" addClass="form-control minimum_flatpicker flatpickr-input active"></ng2-flatpickr>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <div class="card">
+            <div class="card-header d-flex justify-content-between">
+                <div class="header-title">
+                    <h4 class="card-title">Disabling Specific dates</h4>
+                    <p> If you’d like to make certain dates unavailable for selection</p>
+
+                </div>
+            </div>
+            <div class="card-body text-center">
+                <ng2-flatpickr placeholder="24 Jan 2022 : 02 : 00 : am " [config]="specificdisableOptions" addClass="form-control minimum_flatpicker flatpickr-input active"></ng2-flatpickr>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <div class="card">
+            <div class="card-header d-flex justify-content-between">
+                <div class="header-title">
+                    <h4 class="card-title">Time_picker</h4>
+                    <p> Time pickers allow users to enter a specific Time value .</p>
+
+                </div>
+            </div>
+            <div class="card-body text-center">
+                <div class="form-group">
+                    <ng2-flatpickr placeholder="24 Jan 2022 : 02 : 00 : am " [config]="time" addClass="form-control minimum_flatpicker flatpickr-input active"></ng2-flatpickr>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <div class="card">
+            <div class="card-header d-flex justify-content-between">
+                <div class="header-title">
+                    <h4 class="card-title">Disabling all dates except select few</h4>
+                    <p> This is the enable option, which takes in an array of date strings, date ranges and functions.
+                        Essentially the same as the disable option above, but reversed.
+
+                    </p>
+
+                </div>
+            </div>
+            <div class="card-body text-center">
+                <ng2-flatpickr placeholder="24 Jan 2022 : 02 : 00 : am " [config]="disableexceptOptions" addClass="form-control minimum_flatpicker flatpickr-input active"></ng2-flatpickr>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-6">
+        <div class="card">
+            <div class="card-header d-flex justify-content-between">
+                <div class="header-title">
+                    <h4 class="card-title">Human-friendly Dates</h4>
+                    <p> Upon date selection, the original input will contain a Y-m-d... string, while the altInput will
+                        display the date in a more legible, customizable format.</p>
+
+                </div>
+            </div>
+            <div class="card-body text-center">
+                <ng2-flatpickr placeholder="24 Jan 2022 : 02 : 00 : am " [config]="humanDateOptions" addClass="form-control minimum_flatpicker flatpickr-input active"></ng2-flatpickr>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-6">
+        <div class="card">
+            <div class="card-header d-flex justify-content-between">
+                <div class="header-title">
+                    <h4 class="card-title">Range Calendar</h4>
+                    <p> Select a range of dates using the range calendar.</p>
+
+                </div>
+            </div>
+            <div class="card-body text-center">
+                <div class="form-group">
+                    <ng2-flatpickr placeholder="24 Jan 2022 to 23 Feb 2022" [config]="dateRangeOptions" addClass="form-control range_flatpicker flatpickr-input active"></ng2-flatpickr>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <div class="card">
+            <div class="card-header d-flex justify-content-between">
+                <div class="header-title">
+                    <h4 class="card-title"> Date Picker</h4>
+                    <p> Date pickers allow users to enter a specific date . </p>
+
+                </div>
+            </div>
+            <div class="card-body text-center">
+                <div class="form-group">
+                    <ng2-flatpickr placeholder="24 Jan 2022 : 02 : 00 : am " [config]="flatpickrdateOptions" addClass="form-control minimum_flatpicker flatpickr-input active"></ng2-flatpickr>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
