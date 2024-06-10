@@ -70,6 +70,9 @@ import { ActionAddComponent } from './actions/action-add/action-add.component';
 import { ActionDetailsComponent } from './actions/action-details/action-details.component';
 import { ProjetDetailsComponent } from './projets/projet-details/projet-details.component';
 import { CreateDemandeComponent } from './demandes/create-demande/create-demande.component';
+import { SubscriptionComponent } from './subscription/subscription.component';
+import { SoldeComponent } from './solde/solde.component';
+import { EncaissementArgentComponent } from './encaissement-argent/encaissement-argent.component';
 
 const routes: Routes = [
   // Component Routes
@@ -111,9 +114,21 @@ const routes: Routes = [
     component: ActionDetailsComponent,
     data: {routeName: 'actions.action-details', pageTitle:'Details Action'}
   },
-
-
-
+  {
+    path: 'encaissement',
+    component: EncaissementArgentComponent,
+    data: {routeName: 'consultation.encaissement', pageTitle:'encaissement'}
+  },
+  {
+    path: 'subscription',
+    component: SubscriptionComponent,
+    data: {routeName: 'home.subscription', pageTitle:'subscription'}
+  },
+  {
+    path: 'solde',
+    component: SoldeComponent,
+    data: {routeName: 'consultation.solde', pageTitle:'solde'}
+  },
   {
     path: 'special-pages/billing',
     component: BillingComponent,

@@ -123,6 +123,11 @@ import { ActionAddComponent } from './actions/action-add/action-add.component';
 import { ActionDetailsComponent } from './actions/action-details/action-details.component';
 import { CreateDemandeComponent } from './demandes/create-demande/create-demande.component';
 import { ConsultationDemandeComponent } from './demandes/consultation-demande/consultation-demande.component';
+import { SubscriptionComponent } from './subscription/subscription.component';
+import { SoldeComponent } from './solde/solde.component';
+import { EncaissementArgentComponent } from './encaissement-argent/encaissement-argent.component';
+import { QRCodeModule } from 'angularx-qrcode';
+
 
 @NgModule({
   declarations: [
@@ -210,6 +215,9 @@ import { ConsultationDemandeComponent } from './demandes/consultation-demande/co
     ActionDetailsComponent,
     CreateDemandeComponent,
     ConsultationDemandeComponent,
+    SubscriptionComponent,
+    SoldeComponent,
+    EncaissementArgentComponent,
 
 
 
@@ -230,6 +238,7 @@ import { ConsultationDemandeComponent } from './demandes/consultation-demande/co
     FullCalendarModule,
     SwiperModule,
     BarRatingModule,
+    QRCodeModule,
     NgDragDropModule.forRoot()
   ],
   exports: [

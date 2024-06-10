@@ -1,0 +1,28 @@
+<div class=" mt-5">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header text-center">
+                    <h4>Encaissement d'Argent</h4>
+                </div>
+
+                <div class="col-md-6 offset-md-3 py-4"> 
+                <div class="card-body">
+                    <form (submit)="generateQRCode($event)">
+                        <div class="form-group">
+                            <label for="amount">Montant</label>
+                            <input type="number" id="amount" class="form-control" placeholder="Entrez le montant"
+                                [(ngModel)]="amount" name="amount" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">Générer QR Code</button>
+                    </form>
+                    <div *ngIf="qrValue" class="text-center mt-4">
+                        <qrcode [qrdata]="qrValue" [width]="256" [errorCorrectionLevel]="'M'" cssClass="qrcodeshadow"></qrcode>
+                        <!-- <canvas #qrCodeCanvas id="qrCodeCanvas"></canvas> -->
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
