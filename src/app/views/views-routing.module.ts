@@ -73,28 +73,33 @@ import { CreateDemandeComponent } from './demandes/create-demande/create-demande
 import { SubscriptionComponent } from './subscription/subscription.component';
 import { SoldeComponent } from './solde/solde.component';
 import { EncaissementArgentComponent } from './encaissement-argent/encaissement-argent.component';
-
+import { AuthGuard } from './shared/auth.guard';
 const routes: Routes = [
   // Component Routes
   {
     path: 'dashboard',
     component: AnalyticsDashboardComponent,
+    canActivate: [AuthGuard], // Protect this route
+
     data: {routeName: 'default.dashboard', pageTitle:'Tableau de bord'}
   },
 
   {
     path: 'projets/projet-list',
     component: ProjetListComponent,
+    canActivate: [AuthGuard],
     data: {routeName: 'projets.projet-list', pageTitle:'Liste Projets'}
   },
   {
     path: 'projets/projet-add',
     component: ProjetAddComponent,
+    canActivate: [AuthGuard],
     data: {routeName: 'projets.projet-add', pageTitle:'Ajouter Projet'}
   },
   {
     path: 'projets/projet-details',
     component: ProjetDetailsComponent,
+    canActivate: [AuthGuard],
     data: {routeName: 'projets.projet-details', pageTitle:'Details Projet'}
   },
 
@@ -102,351 +107,413 @@ const routes: Routes = [
   {
     path: 'actions/action-list',
     component: ActionListComponent,
+    canActivate: [AuthGuard],
     data: {routeName: 'actions.action-list', pageTitle:'List Actions'}
   },
   {
     path: 'actions/action-add',
     component: ActionAddComponent,
+    canActivate: [AuthGuard],
     data: {routeName: 'actions.action-add', pageTitle:'Ajouter Action'}
   },
   {
     path: 'actions/action-details',
     component: ActionDetailsComponent,
+    canActivate: [AuthGuard],
     data: {routeName: 'actions.action-details', pageTitle:'Details Action'}
   },
   {
     path: 'encaissement',
     component: EncaissementArgentComponent,
+    canActivate: [AuthGuard],
     data: {routeName: 'consultation.encaissement', pageTitle:'encaissement'}
   },
   {
     path: 'subscription',
     component: SubscriptionComponent,
+    canActivate: [AuthGuard],
     data: {routeName: 'home.subscription', pageTitle:'subscription'}
   },
   {
     path: 'solde',
     component: SoldeComponent,
+    canActivate: [AuthGuard],
     data: {routeName: 'consultation.solde', pageTitle:'solde'}
   },
   {
     path: 'special-pages/billing',
     component: BillingComponent,
-    data: {routeName: 'spacial-pages.billing', pageTitle:'Billing'}
+    canActivate: [AuthGuard],
+    data: { routeName: 'special-pages.billing', pageTitle: 'Billing' }
   },
   {
     path: 'special-pages/calender',
     component: CalenderComponent,
-    data: {routeName: 'spacial-pages.calender', pageTitle:'Calender'}
+    canActivate: [AuthGuard],
+    data: { routeName: 'special-pages.calender', pageTitle: 'Calender' }
   },
   {
     path: 'special-pages/kanban',
     component: KanbanComponent,
-    data: {routeName: 'spacial-pages.kanban', pageTitle:'Kanban'}
+    canActivate: [AuthGuard],
+    data: { routeName: 'special-pages.kanban', pageTitle: 'Kanban' }
   },
   {
     path: 'special-pages/pricing',
     component: PricingComponent,
-    data: {routeName: 'spacial-pages.pricing', pageTitle:'Pricing'}
+    canActivate: [AuthGuard],
+    data: { routeName: 'special-pages.pricing', pageTitle: 'Pricing' }
   },
   {
     path: 'special-pages/timeline',
     component: TimelineComponent,
-    data: {routeName: 'spacial-pages.timeline',pageTitle:'Pricing'}
+    canActivate: [AuthGuard],
+    data: { routeName: 'special-pages.timeline', pageTitle: 'Pricing' }
   },
   {
     path: 'users/user-profile',
     component: UserProfileComponent,
-    data: {routeName: 'users.user-profile', pageTitle:'User'}
+    canActivate: [AuthGuard],
+    data: { routeName: 'users.user-profile', pageTitle: 'User' }
   },
   {
     path: 'users/user-add',
     component: UserAddComponent,
-    data: {routeName: 'users.user-add', pageTitle:'Ajouter User'}
+    canActivate: [AuthGuard],
+    data: { routeName: 'users.user-add', pageTitle: 'Ajouter User' }
   },
   {
     path: 'users/user-list',
     component: UserListComponent,
-    data: {routeName: 'users.user-list', pageTitle:'List Users '}
+    canActivate: [AuthGuard],
+    data: { routeName: 'users.user-list', pageTitle: 'List Users ' }
   },
   {
     path: 'plugins/apexchart',
     component: ApexchartComponent,
-    data: {routeName: 'plugins.apexchart', pageTitle:'Apexchart'}
+    canActivate: [AuthGuard],
+    data: { routeName: 'plugins.apexchart', pageTitle: 'Apexchart' }
   },
   {
     path: 'plugins/button-hover',
     component: ButtonHoverComponent,
-    data: {routeName: 'plugins.button-hover', pageTitle:'Button Hover'}
+    canActivate: [AuthGuard],
+    data: { routeName: 'plugins.button-hover', pageTitle: 'Button Hover' }
   },
   {
     path: 'plugins/choise-js',
     component: ChoiseJsComponent,
-    data: {routeName: 'plugins.choise-js', pageTitle:'Choise Js'}
+    canActivate: [AuthGuard],
+    data: { routeName: 'plugins.choise-js', pageTitle: 'Choise Js' }
   },
   {
     path: 'plugins/flatpickr',
     component: FlatpickrComponent,
-    data: {routeName: 'plugins.flatpicker', pageTitle:'Flatpicker'}
+    canActivate: [AuthGuard],
+    data: { routeName: 'plugins.flatpicker', pageTitle: 'Flatpicker' }
   },
   {
     path: 'plugins/fslightbox',
     component: FslightboxComponent,
-    data: {routeName: 'plugins.fslightbox', pageTitle:'Fslightbox'}
+    canActivate: [AuthGuard],
+    data: { routeName: 'plugins.fslightbox', pageTitle: 'Fslightbox' }
   },
   {
     path: 'plugins/gallery',
     component: GalleryComponent,
-    data: {routeName: 'plugins.gallery', pageTitle:'Gallery'}
+    canActivate: [AuthGuard],
+    data: { routeName: 'plugins.gallery', pageTitle: 'Gallery' }
   },
   {
     path: 'plugins/image',
     component: ImageComponent,
-    data: {routeName: 'plugins.image', pageTitle:'Image'}
+    canActivate: [AuthGuard],
+    data: { routeName: 'plugins.image', pageTitle: 'Image' }
   },
   {
     path: 'plugins/loader',
     component: LoaderComponent,
-    data: {routeName: 'plugins.loader', pageTitle:'Loader'}
+    canActivate: [AuthGuard],
+    data: { routeName: 'plugins.loader', pageTitle: 'Loader' }
   },
   {
     path: 'plugins/rating',
     component: RatingComponent,
-    data: {routeName: 'plugins.rating', pageTitle:'Rating'}
+    canActivate: [AuthGuard],
+    data: { routeName: 'plugins.rating', pageTitle: 'Rating' }
   },
   {
     path: 'plugins/select2',
     component: Select2Component,
-    data: {routeName: 'plugins.select2', pageTitle:'Select2'}
+    canActivate: [AuthGuard],
+    data: { routeName: 'plugins.select2', pageTitle: 'Select2' }
   },
   {
     path: 'plugins/sweet-alert',
     component: SweetAlertComponent,
-    data: {routeName: 'plugins.sweet-alert', pageTitle:'Sweet Alert'}
+    canActivate: [AuthGuard],
+    data: { routeName: 'plugins.sweet-alert', pageTitle: 'Sweet Alert' }
   },
   {
     path: 'plugins/quill-editor',
     component: QuillEditorComponent,
-    data: {routeName: 'plugins.quill-editor', pageTitle:'Quill Editor'}
+    canActivate: [AuthGuard],
+    data: { routeName: 'plugins.quill-editor', pageTitle: 'Quill Editor' }
   },
   {
     path: 'plugins/uppy',
     component: UppyComponent,
-    data: {routeName: 'plugins.uppy', pageTitle:'Uppy'}
+    canActivate: [AuthGuard],
+    data: { routeName: 'plugins.uppy', pageTitle: 'Uppy' }
   },
   {
     path: 'ui-color',
     component: UiColorComponent,
+    canActivate: [AuthGuard],
   },
   {
     path: 'widget/widget-basic',
     component: WidgetBasicComponent,
-    data: {routeName: 'widget.widget-basic', pageTitle:'Widget Basic'}
+    canActivate: [AuthGuard],
+    data: { routeName: 'widget.widget-basic', pageTitle: 'Widget Basic' }
   },
   {
     path: 'widget/widget-chart',
     component: WidgetChartComponent,
-    data: {routeName: 'widget.widget-chart', pageTitle:'Widget Basic'}
+    canActivate: [AuthGuard],
+    data: { routeName: 'widget.widget-chart', pageTitle: 'Widget Basic' }
   },
   {
     path: 'widget/widget-card',
     component: WidgetCardComponent,
-    data: {routeName: 'widget.widget-card', pageTitle:'Widget Basic'}
+    canActivate: [AuthGuard],
+    data: { routeName: 'widget.widget-card', pageTitle: 'Widget Basic' }
   },
   {
     path: 'form/elements',
     component: ElementsComponent,
-    data: {routeName: 'form.elements', pageTitle:'Elements'}
-
+    canActivate: [AuthGuard],
+    data: { routeName: 'form.elements', pageTitle: 'Elements' }
   },
   {
     path: 'form/wizard',
     component: WizardComponent,
-    data: {routeName: 'form.wizard', pageTitle:'Wizard'}
-
+    canActivate: [AuthGuard],
+    data: { routeName: 'form.wizard', pageTitle: 'Wizard' }
   },
   {
     path: 'form/validation',
-    component:ValidationComponent,
-    data: {routeName: 'form.validation', pageTitle:'Validation'}
+    component: ValidationComponent,
+    canActivate: [AuthGuard],
+    data: { routeName: 'form.validation', pageTitle: 'Validation' }
   },
   {
     path: 'map/google',
-    component:GoogleComponent,
-    data: {routeName: 'map.google', pageTitle:'Google'}
+    component: GoogleComponent,
+    canActivate: [AuthGuard],
+    data: { routeName: 'map.google', pageTitle: 'Google' }
   },
   {
     path: 'map/vector',
-    component:VectorComponent,
-    data: {routeName: 'map.vector', pageTitle:'Google'}
+    component: VectorComponent,
+    canActivate: [AuthGuard],
+    data: { routeName: 'map.vector', pageTitle: 'Google' }
   },
   {
     path: 'table/bootstrap-table',
-    component:BootstrapTableComponent,
-    data: {routeName: 'table.bootstrap-table', pageTitle:'bootstraptable' }
+    component: BootstrapTableComponent,
+    canActivate: [AuthGuard],
+    data: { routeName: 'table.bootstrap-table', pageTitle: 'bootstraptable' }
   },
-
   {
     path: 'table/border-table',
-    component:BorderTableComponent,
-    data: {routeName: 'table.border-table', pageTitle:'bootstraptable' }
+    component: BorderTableComponent,
+    canActivate: [AuthGuard],
+    data: { routeName: 'table.border-table', pageTitle: 'bootstraptable' }
   },
-
   {
     path: 'table/fancy-table',
-    component:FancyTableComponent,
-    data: {routeName: 'table.fancy-table', pageTitle:'bootstraptable' }
+    component: FancyTableComponent,
+    canActivate: [AuthGuard],
+    data: { routeName: 'table.fancy-table', pageTitle: 'bootstraptable' }
   },
-
   {
     path: 'table/fixed-table',
-    component:FixedTableComponent,
-    data: {routeName: 'table.fixed-table', pageTitle:'bootstraptable' }
+    component: FixedTableComponent,
+    canActivate: [AuthGuard],
+    data: { routeName: 'table.fixed-table', pageTitle: 'bootstraptable' }
   },
-
   {
     path: 'blank-page',
-    component:BlankPageComponent,
+    component: BlankPageComponent,
+    canActivate: [AuthGuard],
   },
-
   {
     path: 'admin',
-    component:AdminComponent,
+    component: AdminComponent,
+    canActivate: [AuthGuard],
   },
   {
     path: 'icons/solid',
-    component:SolidComponent,
-    data: {routeName: 'icons.solid', pageTitle:'Solid'}
+    component: SolidComponent,
+    canActivate: [AuthGuard],
+    data: { routeName: 'icons.solid', pageTitle: 'Solid' }
   },
   {
     path: 'icons/outlined',
-    component:OutlinedComponent,
-    data: {routeName: 'icons.outlined', pageTitle:'Outlined' }
+    component: OutlinedComponent,
+    canActivate: [AuthGuard],
+    data: { routeName: 'icons.outlined', pageTitle: 'Outlined' }
   },
   {
     path: 'icons/dual-tone',
-    component:DualToneComponent,
-    data: {routeName: 'icons.dual-tone', pageTitle:'Dual Tone'}
+    component: DualToneComponent,
+    canActivate: [AuthGuard],
+    data: { routeName: 'icons.dual-tone', pageTitle: 'Dual Tone' }
   },
   {
     path: 'analytics-dashboard',
-    component:AnalyticsDashboardComponent,
-    data: {routeName: 'analytics-dashboard', pageTitle:'Tableau de bord'}
+    component: AnalyticsDashboardComponent,
+    canActivate: [AuthGuard],
+    data: { routeName: 'analytics-dashboard', pageTitle: 'Tableau de bord' }
   },
   {
     path: 'crypto-dashboard',
-    component:CryptoDashboardComponent,
-    data: {routeName: 'crypto-dashboard', pageTitle:'Crypto'}
+    component: CryptoDashboardComponent,
+    canActivate: [AuthGuard],
+    data: { routeName: 'crypto-dashboard', pageTitle: 'Crypto' }
   },
   {
     path: 'ui-elements/ui-avatars',
     component:UiAvatarsComponent,
+    canActivate: [AuthGuard],
     data: {routeName: 'ui-elements.ui-avatars', pageTitle:'Avatars'}
   },
   {
     path: 'ui-elements/ui-alerts',
     component:UiAlertsComponent,
+    canActivate: [AuthGuard],
     data: {routeName: 'ui-elements.ui-alert', pageTitle:'Alert'}
   },
   {
     path: 'ui-elements/ui-badges',
     component:UiBadgesComponent,
+    canActivate: [AuthGuard],
     data: {routeName: 'ui-elements.ui-badges', pageTitle:'Badges'}
   },
   {
     path: 'ui-elements/ui-breadcrumb',
     component:UiBreadcrumbComponent,
+    canActivate: [AuthGuard],
     data: {routeName: 'ui-elements.ui-breadcrumb', pageTitle:'Breadcrumb'}
   },
   {
     path: 'ui-elements/ ui-buttons',
     component:UiButtonsComponent,
+    canActivate: [AuthGuard],
     data: {routeName: 'ui-elements.ui-buttons', pageTitle:'Buttons'}
   },
   {
     path: 'ui-elements/ui-buttons-group',
     component:UiButtonsGroupComponent,
+    canActivate: [AuthGuard],
     data: {routeName: 'ui-elements.ui-buttons-group', pageTitle:'ButtonsGroup'}
   },
   {
     path: 'ui-elements/ui-offcanvas',
     component:UiOffcanvasComponent,
+    canActivate: [AuthGuard],
     data: {routeName: 'ui-elements.ui-offcanvas', pageTitle:'Offcanvas'}
   },
   {
     path: 'ui-elements/ui-colors',
     component:UiColorsComponent,
+    canActivate: [AuthGuard],
     data: {routeName: 'ui-elements.ui-colors', pageTitle:'Colors'}
   },
   {
     path: 'ui-elements/ui-cards',
     component:UiCardsComponent,
+    canActivate: [AuthGuard],
     data: {routeName: 'ui-elements.ui-cards', pageTitle:'Cards'}
   },
   {
     path: 'ui-elements/ui-carousel',
     component:UiCarouselComponent,
+    canActivate: [AuthGuard],
     data: {routeName: 'ui-elements.ui-cards', pageTitle:'Carousel'}
   },
   {
     path: 'ui-elements/ui-grid',
     component:UiGridComponent,
+    canActivate: [AuthGuard],
     data: {routeName: 'ui-elements.ui-cards', pageTitle:'Grid'}
   },
   {
     path: 'ui-elements/ui-images',
     component:UiImagesComponent,
+    canActivate: [AuthGuard],
     data: {routeName: 'ui-elements.ui-images', pageTitle:'Images'}
   },
   {
     path: 'ui-elements/ui-list-group',
     component:UiListGroupComponent,
+    canActivate: [AuthGuard],
     data: {routeName: 'ui-elements.ui-list-group', pageTitle:'Group'}
   },
   {
     path: 'ui-elements/ui-modal',
     component:UiModalComponent,
+    canActivate: [AuthGuard],
     data: {routeName: 'ui-elements.ui-cards', pageTitle:'Modal'}
   },
   {
     path: 'ui-elements/ui-notifications',
     component:UiNotificationsComponent,
+    canActivate: [AuthGuard],
     data: {routeName: 'ui-elements.ui-cards', pageTitle:'Notifications'}
   },
   {
     path: 'ui-elements/ui-pagination',
     component:UiPaginationComponent,
+    canActivate: [AuthGuard],
     data: {routeName: 'ui-elements.ui-cards', pageTitle:'pagination'}
   },
   {
     path: 'ui-elements/ui-popovers',
     component:UiPopoversComponent,
+    canActivate: [AuthGuard],
     data: {routeName: 'ui-elements.ui-popovers', pageTitle:'Popovers'}
   },
   {
     path: 'ui-elements/ui-typography',
     component:UiTypographyComponent,
+    canActivate: [AuthGuard],
     data: {routeName: 'ui-elements.ui-typography', pageTitle:'Typography'}
   },
   {
     path: 'ui-elements/ui-tabs',
     component:UiTabsComponent,
+    canActivate: [AuthGuard],
     data: {routeName: 'ui-elements.ui-tabs', pageTitle:'Tabs'}
   },
   {
     path: 'ui-elements/ui-tooltips',
     component:UiTooltipsComponent,
+    canActivate: [AuthGuard],
     data: {routeName: 'ui-elements.ui-tooltips', pageTitle:'Tooltips'}
   },
   {
     path: 'ui-elements/ui-embed-video',
     component:UiEmbedVideoComponent,
+    canActivate: [AuthGuard],
     data: {routeName: 'ui-elements.embed-video', pageTitle:'Video'}
   },
   
   {
     path: 'demandes/create-demande',
     component:CreateDemandeComponent,
+    canActivate: [AuthGuard],
     data: {routeName: 'demandes.create-demande', pageTitle:'Creation demande'}
   },
 ];

@@ -43,6 +43,7 @@
     "ng2-flatpickr": "^9.0.0",
     "ng2-search-filter": "^0.5.1",
     "ngx-bar-rating": "^4.0.1",
+    "ngx-cookie-service": "^17.1.0",
     "ngx-countup": "^13.1.0",
     "nouislider": "^15.6.1",
     "qrious": "^4.0.2",
