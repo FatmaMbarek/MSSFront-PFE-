@@ -15,12 +15,17 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { CountUpModule } from 'ngx-countup';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { InterceptorService } from './views/shared/interceptor.service';
+import { CookieService } from 'ngx-cookie-service';
+
 
 
 
 @NgModule({
   declarations: [
     AppComponent
+  
     
   ],
 
@@ -35,7 +40,7 @@ import { CountUpModule } from 'ngx-countup';
   ],
 
 
-  providers: [],
+  providers: [CookieService, { provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi: true }],
   bootstrap: [AppComponent],
   exports: [
   
