@@ -15,7 +15,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { CountUpModule } from 'ngx-countup';
-import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClient, HttpClientModule } from '@angular/common/http';
 import { InterceptorService } from './views/shared/interceptor.service';
 import { CookieService } from 'ngx-cookie-service';
 
@@ -36,7 +36,7 @@ import { CookieService } from 'ngx-cookie-service';
     NgbModule,
     StoreModule.forRoot(StoreState),
     CountUpModule,
-
+    HttpClientModule
   ],
 
 
