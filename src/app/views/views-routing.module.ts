@@ -102,8 +102,6 @@ const routes: Routes = [
     canActivate: [AuthGuard],
     data: {routeName: 'projets.projet-details', pageTitle:'Details Projet'}
   },
-
-
   {
     path: 'actions/action-list',
     component: ActionListComponent,

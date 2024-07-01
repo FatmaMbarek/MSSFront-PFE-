@@ -1,0 +1,15 @@
+.fixed-height-ul {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+  }
+  
+  .fixed-height-ul li {
+      flex: 1;
+      display: flex;
+      align-items: center;
+  }
+  
+  .fixed-height-ul p {
+      margin-bottom: 0;
+  }

@@ -1,4 +1,11 @@
-<div class="row">
+<div *ngIf="isLoading" class="row mt-5">
+    <div class="iq-loader-box mt-5">
+      <div class="iq-loader-10"></div>
+    </div>
+  </div>
+
+
+<div *ngIf="!isLoading" class="row">
    <div >
       <div class="card">
          <div class="card-body">
@@ -12,7 +19,7 @@
                   </svg>
                </div> -->
                <div class="text-center p-5">
-                  <h2 class="counter" [countUp]="5600" [options]="{ enableScrollSpy: true }">0</h2>
+                  <h2 class="counter" [countUp]="soldeWallet" [options]="{ enableScrollSpy: true }">0</h2>
                   <span class="label">TND</span>
                </div>
             </div>

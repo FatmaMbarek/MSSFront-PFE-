@@ -9,16 +9,23 @@ import {PackClass } from './subscrption'
 })
 export class SubscriptionComponent implements OnInit {
 
+  isLoading = false
    packs : PackClass [] = [];
+  
+
   constructor(private subscriptionServices : SubscriptionsService) { }
 
   ngOnInit(): void {
-    this.subscriptionServices.getPacks()
-    .subscribe(data => {
-      console.log(data)
-      console.log(data.$values);
-      this.packs = data.$values
-    })
+    this.isLoading = true
+    
+      this.subscriptionServices.getPacks()
+      .subscribe(data => {
+        this.isLoading = false
+        console.log(data)
+        console.log(data.$values);
+        this.packs = data.$values
+      })
+
   }
 
 }
