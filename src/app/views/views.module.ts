@@ -127,6 +127,10 @@ import { SubscriptionComponent } from './subscription/subscription.component';
 import { SoldeComponent } from './solde/solde.component';
 import { EncaissementArgentComponent } from './encaissement-argent/encaissement-argent.component';
 import { QRCodeModule } from 'angularx-qrcode';
+import { ExtraitComponent } from './mabanque/extrait/extrait.component';
+import { RibibanComponent } from './mabanque/ribiban/ribiban.component';
+import { ReconciliationComponent } from './mabanque/reconciliation/reconciliation.component';
+import { PdfViewerModule } from 'ng2-pdf-viewer';
 
 
 @NgModule({
@@ -218,6 +222,9 @@ import { QRCodeModule } from 'angularx-qrcode';
     SubscriptionComponent,
     SoldeComponent,
     EncaissementArgentComponent,
+    ExtraitComponent,
+    RibibanComponent,
+    ReconciliationComponent,
 
 
 
@@ -239,7 +246,8 @@ import { QRCodeModule } from 'angularx-qrcode';
     SwiperModule,
     BarRatingModule,
     QRCodeModule,
-    NgDragDropModule.forRoot()
+    NgDragDropModule.forRoot(),
+    PdfViewerModule
   ],
   exports: [
     DashboardComponent,

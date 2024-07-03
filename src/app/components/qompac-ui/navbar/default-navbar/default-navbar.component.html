@@ -339,13 +339,13 @@
                 <img src="assets/images/avatars/03.png" alt="User-Profile"
                   class="theme-color-pink-img img-fluid avatar avatar-50 avatar-rounded" loading="lazy">
                 <div class="caption ms-3 d-none d-md-block ">
-                  <h6 class="mb-0 caption-title">Fatma Mbarek</h6>
+                  <h6 class="mb-0 caption-title"> {{merchant.LastName}} {{merchant.FirstName}}  </h6>
                   <p class="mb-0 caption-sub-title">Commerçant</p>
                 </div>
               </a>
               <ul ngbDropdownMenu class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                 <li><a class="dropdown-item"  [routerLink]="['/users/user-profile']">Profile</a></li>
-                <li><a class="dropdown-item" [routerLink]="['']">Paramètres</a></li>
+                <!-- <li><a class="dropdown-item" [routerLink]="['']">Paramètres</a></li> -->
                 <li>
                   <hr class="dropdown-divider">
                 </li>

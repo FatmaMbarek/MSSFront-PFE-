@@ -27,6 +27,7 @@
     "@fullcalendar/list": "^5.11.3",
     "@fullcalendar/timegrid": "^5.11.3",
     "@ng-bootstrap/ng-bootstrap": "^13.1.1",
+    "ng2-pdf-viewer": "^9.0.0",
     "@ngrx/store": "^14.3.2",
     "@popperjs/core": "^2.10.2",
     "angularx-qrcode": "^14.0.0",

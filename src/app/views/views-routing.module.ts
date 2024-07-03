@@ -74,6 +74,8 @@ import { SubscriptionComponent } from './subscription/subscription.component';
 import { SoldeComponent } from './solde/solde.component';
 import { EncaissementArgentComponent } from './encaissement-argent/encaissement-argent.component';
 import { AuthGuard } from './shared/auth.guard';
+import { ExtraitComponent } from './mabanque/extrait/extrait.component';
+import { RibibanComponent } from './mabanque/ribiban/ribiban.component';
 const routes: Routes = [
   // Component Routes
   {
@@ -89,6 +91,18 @@ const routes: Routes = [
     component: ProjetListComponent,
     canActivate: [AuthGuard],
     data: {routeName: 'projets.projet-list', pageTitle:'Liste Projets'}
+  },
+  {
+    path: 'extrait',
+    component: ExtraitComponent,
+    canActivate: [AuthGuard],
+    data: {routeName: 'projets.extarit', pageTitle:'Extrait de compte'}
+  },
+  {
+    path: 'rib-iban',
+    component: RibibanComponent,
+    canActivate: [AuthGuard],
+    data: {routeName: 'projets.rib-iban', pageTitle:'RIB IBAN'}
   },
   {
     path: 'projets/projet-add',

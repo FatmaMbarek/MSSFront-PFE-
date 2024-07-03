@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import {SettingState} from '../../../../model/setting.model';
 import {theme_scheme, theme_scheme_direction} from '../../../../store/setting/actions';
 import {themeSchemeSelector, themeSchemeDirectionSelector} from '../../../../store/setting/selector';
+import { Merchant } from 'src/app/model/merchant';
 
 @Component({
   selector: 'iq-default-navbar',
@@ -28,6 +29,7 @@ export class DefaultNavbarComponent implements OnInit {
 
   public isMenuCollapsed = true;
 
+  merchant : any ;
   constructor(@Inject(DOCUMENT) private document: any, private store: Store<{ settingObject: SettingState}>,) {
     this.themeScheme$ = store.pipe(select(themeSchemeSelector));
     this.themeSchemeDirection$ = store.pipe(select(themeSchemeDirectionSelector));
@@ -36,6 +38,11 @@ export class DefaultNavbarComponent implements OnInit {
   ngOnInit(): void {
     this.chkScreenMode();
     this.elem = document.documentElement;
+ setTimeout(() => {
+  
+   this.merchant! = JSON.parse(localStorage.getItem("Merchant")?.toString()!);
+ }, 1000);
+
   }
 
   @HostListener('document:fullscreenchange', ['$event'])

@@ -19,6 +19,7 @@ import { HTTP_INTERCEPTORS, HttpClient, HttpClientModule } from '@angular/common
 import { InterceptorService } from './views/shared/interceptor.service';
 import { CookieService } from 'ngx-cookie-service';
 
+import { PdfViewerModule } from 'ng2-pdf-viewer';
 
 
 
@@ -36,7 +37,8 @@ import { CookieService } from 'ngx-cookie-service';
     NgbModule,
     StoreModule.forRoot(StoreState),
     CountUpModule,
-    HttpClientModule
+    HttpClientModule,
+    PdfViewerModule
   ],
 
 

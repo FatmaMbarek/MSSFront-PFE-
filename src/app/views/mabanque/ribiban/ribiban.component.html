@@ -1,0 +1,190 @@
+<!-- 
+<div class="row">
+    <div class="col-3" routerLink="/home/carte/delivrer-carte"  > 
+        <button type="button" class="btn btn-info"><i class="bi bi-plus-circle"></i></button> Ajouter
+    </div>
+    <div class="col-9"></div>
+</div> -->
+
+
+<!-- Color spinners -->
+
+
+
+<section class="section mt-4">
+
+      <!-- <div  >
+          <div class="spinner-border text-primary" role="status" >
+              <span class="visually-hidden">Loading...</span>
+            </div>
+      </div> -->
+  
+   
+      <div class="row">
+          <div class="col-lg-12">
+  
+              <div class="card">
+                  <div class="card-body">
+  
+                      <h5 class="card-title">Consultation RIB & IBAN</h5>
+  
+                     
+                  
+  
+                      <!-- <div class="row">
+                          <span>RIB</span>
+                      </div>
+                      <div class="row">
+  
+                          <div class="col-4">
+  
+  
+  
+                                  <select   class="form-select "  aria-label="Default select example"  [(ngModel)]="Compte"   >
+                                      <option [ngValue]="" hidden selected> Choisir votre RIB </option>
+                                      <option  *ngFor=" let r of listCompte" value={{r.account_routings[0].scheme}} >{{r.account_routings[0].scheme}} ({{r.label}}) </option>
+                                   
+                                
+                                      
+                                     
+                                    </select>
+  
+                          </div>
+  
+                          <div class="col-1"></div>
+                          <div class="col-4">
+  
+  
+                              <button class="btn btn-primary btn-lg" (click)="VisualiserRibIban()">Visualiser</button>
+  
+  
+                          </div>
+  
+  
+  
+  
+  
+                      </div> -->
+  
+  
+  
+                      <div class="row">
+  
+  
+                          <div class="col-12 ">
+                            <div class="row">
+                  
+                              <div class="col-4">
+                                <div class=" col-2" style="text-align: initial;" class="font-weight-bold TitleMobile">Sélectionnez une
+                                  société<span style="color: red;">*</span></div>
+                  
+                                <select (change)="getAccountsBytiers()" name="origin_country" [(ngModel)]="Ref" class="custom-select form-control" >
+                                  <option Value="" hidden selected> Choisir société </option>
+                                  <option *ngFor="let c of ListTiers" value={{c.Referentiel}}> {{c.FullName}} </option>
+                  
+                                </select>
+                  
+                          
+                  
+                              </div>
+                              <div class=" col-4 ">
+                  
+                                <div class=" col-2" style="text-align: initial;" class="font-weight-bold TitleMobile">Choisir un compte
+                                  <span style="color: red;">*</span>
+                                </div>
+                  
+                                <select name="origin_country"  (change)="getAccountName()" class="custom-select form-control" [(ngModel)]="TypeCompte" >
+                                    <option Value="" hidden selected> Choisir compte </option>
+                                  <option *ngFor="let c of list0" value={{c.scheme}}> {{c.scheme}} </option>
+                  
+                                </select>
+                  
+                  
+                        
+                  
+                              </div>
+                  
+                              <div class="col-4">
+                  
+                  
+                  
+                                <div class=" col-2" style="text-align: initial;" class="font-weight-bold TitleMobile">Libellés des
+                                  comptes</div>
+                  
+                                <input value="{{AccounName}}" class="custom-select form-control" disabled>
+                  
+                  
+                              </div>
+                  
+                            </div>
+                  
+                          </div>
+                  
+                        </div>
+  <br>
+  
+  <div class="row">
+      <div class="col-9"></div>
+      <div class="col-3" style="    text-align: end;">
+          <button class="btn btn-primary btn-lg" (click)="VisualiserRibIban()">Visualiser</button>
+  
+      </div>
+  
+  </div>
+  
+                      <!-- End Table with stripped rows -->
+  
+                  </div>
+              </div>
+  
+  
+  
+              <div style="text-align: center;" *ngIf='loader'>
+  
+                  <div class="spinner-border text-primary" role="status">
+                      <span class="visually-hidden">Loading...</span>
+                  </div>
+              </div>
+  
+          </div>
+      </div>
+  
+      <div id="alertchampsVide" class="alert alert-danger alert-dismissible fade " role="alert">
+          Veuillez choisir un numéro de compte
+          <!-- <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button> -->
+      </div>
+  
+  
+  
+  
+  
+   
+  
+   
+   
+  
+  </section>
+  <div style="text-align: center;" *ngIf="Download">
+      <button class="btn btn-primary btn-lg" style="height: 43px;" (click)="onClickDownloadPdf()">Télécharger</button>
+  
+  </div>
+  <h2 class="card-title" style="text-align: center;" *ngIf="Download">RIB & IBAN </h2>
+  <div style=" text-align: -webkit-center;">
+      <!-- <pdf-viewer [src]="src" [render-text]="true" [original-size]="true" > -->
+          <!-- <pdf-viewer [src]="src" [render-text]="true" [original-size]="true" [autoresize]="true" [fit-to-page]="false">
+  
+      </pdf-viewer> -->
+  
+  
+      <pdf-viewer
+      [src]="src"
+      [render-text]="true"
+      [original-size]="false"
+      style="width: 800px; height: 700px" >
+      
+      </pdf-viewer>
+  
+  </div>
+  <br>
+  <br>
+  

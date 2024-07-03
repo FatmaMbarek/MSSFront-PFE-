@@ -58,7 +58,8 @@
                                  <table class="table table-striped mb-0">
                                      <thead>
                                          <tr>
-                                             <th scope="col">Type</th>
+                                            <th scope="col">N°</th>
+                                             <th scope="col">Client</th>
                                              <th scope="col">Date opération</th>
                                              <th scope="col">Commission</th>
                                              <th scope="col">TVA</th>
@@ -68,91 +69,26 @@
                                          </tr>
                                      </thead>
                                      <tbody>
-                                        <tr>
+                                        <tr *ngFor="let tr of transaction ; let i = index">
+                                            <td>{{i+1}}</td>
                                             <td>
-                                                <div class="d-flex align-items-center">
-                                                    <img class="rounded img-fluid avatar-60 me-3" src="assets/images/avatars/11.png" alt="" loading="lazy">
-                                                   
-                                                </div>
+                                               <b> {{tr.msisdn}}</b>
                                             </td>
-                                            <td class="text-dark">06/06/2024 10:00:00</td>
-                                            <td class="text-dark">0.000 TND</td>
+                                            <td class="text-dark"> {{formatDate(tr.date)}} </td>
+                                            <td class="text-dark"> {{formatAmount(tr.commission)}} TND</td>
                                             <td class="text-dark">
                                                
-                                                0.000 TND
+                                                {{tr.tva}} TND
                                             </td>
-                                            <td class="text-dark">CP5KCN</td>
+                                            <td class="text-dark">{{tr.authCode}}</td>
                                             <td>
-                                                <span class="badge bg-soft-primary p-2 text-primary">Active</span>
+                                                <span class="badge bg-soft-primary p-2 text-primary">{{tr.status}}</span>
                                             </td>
                                             <td>
-                                                1.000 TND
+                                                {{formatAmount(tr.amount)}} TND
                                             </td>
                                         </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="d-flex align-items-center">
-                                                    <img class="rounded img-fluid avatar-60 me-3" src="assets/images/avatars/11.png" alt="" loading="lazy">
-                                                   
-                                                </div>
-                                            </td>
-                                            <td class="text-dark">06/06/2024 10:00:00</td>
-                                            <td class="text-dark">0.000 TND</td>
-                                            <td class="text-dark">
-                                               
-                                                0.000 TND
-                                            </td>
-                                            <td class="text-dark">CP5KCN</td>
-                                            <td>
-                                                <span class="badge bg-soft-primary p-2 text-primary">Active</span>
-                                            </td>
-                                            <td>
-                                                1.000 TND
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="d-flex align-items-center">
-                                                    <img class="rounded img-fluid avatar-60 me-3" src="assets/images/avatars/11.png" alt="" loading="lazy">
-                                                   
-                                                </div>
-                                            </td>
-                                            <td class="text-dark">06/06/2024 10:00:00</td>
-                                            <td class="text-dark">0.000 TND</td>
-                                            <td class="text-dark">
-                                               
-                                                0.000 TND
-                                            </td>
-                                            <td class="text-dark">CP5KCN</td>
-                                            <td>
-                                                <span class="badge bg-soft-primary p-2 text-primary">Active</span>
-                                            </td>
-                                            <td>
-                                                1.000 TND
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="d-flex align-items-center">
-                                                    <img class="rounded img-fluid avatar-60 me-3" src="assets/images/avatars/11.png" alt="" loading="lazy">
-                                                   
-                                                </div>
-                                            </td>
-                                            <td class="text-dark">06/06/2024 10:00:00</td>
-                                            <td class="text-dark">0.000 TND</td>
-                                            <td class="text-dark">
-                                               
-                                                0.000 TND
-                                            </td>
-                                            <td class="text-dark">CP5KCN</td>
-                                            <td>
-                                                <span class="badge bg-soft-primary p-2 text-primary">Active</span>
-                                            </td>
-                                            <td>
-                                                1.000 TND
-                                            </td>
-                                        </tr>
-                                      
+                              
                                       
                                     </tbody>
                                  </table>

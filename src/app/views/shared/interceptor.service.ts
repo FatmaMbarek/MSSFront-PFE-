@@ -22,7 +22,7 @@ export class InterceptorService implements HttpInterceptor {
 
       const token = this.cookieService.get('auth_token');
       const authReq = req.clone({
-          headers: req.headers.set('Authorization', 'Bearer '+token)
+         // headers: req.headers.set('Authorization', 'Bearer '+token)
       });
       console.log(authReq)
       // Pass the cloned request instead of the original request to the next handler
