@@ -167,6 +167,42 @@ return this.http.post('https://openbank.stb.com.tn/api/app/all/v0/getReconciliat
   }
 
 
+  
+  globaltransactions(token: any, account: any, startday : any, endday : any) {
+
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Accept': 'application/json',
+        'content-type': 'application/json',
+        'Authorization': 'Bearer ' + token
+      })
+    };
+    return this.http.get('https://openbank.stb.com.tn/api/standard/mpay/global-transactions?account=' + account + "&startdate="+startday + "&enddate="+ endday, httpOptions)
+      .pipe(
+        retry(2),
+        catchError(this.handleError));
+  }
+
+
+  
+  Raprochement(token: any, walletnumber: any, day : any ) {
+
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Accept': 'application/json',
+        'content-type': 'application/json',
+        'Authorization': 'Bearer ' + token
+      })
+    };
+
+    return this.http.get('https://openbank.stb.com.tn/api/standard/mpay/Raprochement?receiver_number=' + walletnumber + "&filedate=" + day, httpOptions)
+      .pipe(
+        retry(2),
+        catchError(this.handleError));
+  }
+
+
+
   //#endregion
 
 

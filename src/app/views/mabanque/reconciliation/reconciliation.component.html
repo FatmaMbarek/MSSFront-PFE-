@@ -1,1 +1,250 @@
-<p>reconciliation works!</p>
+<section class="section mt-4">
+      <div class="row">
+            <div class="col-lg-12">
+
+                  <div class="card">
+                        <div class="card-body">
+
+                              <h5 class="card-title">Consultation Extrait de compte</h5>
+
+
+
+                              <div class="row">
+
+
+                                    <div class="col-12 ">
+                                          <div class="row">
+
+                                                <div class="col-4">
+                                                      <div class=" col-2" style="text-align: initial;"
+                                                            class="font-weight-bold TitleMobile">Sélectionnez une
+                                                            société<span style="color: red;">*</span></div>
+
+                                                      <select (change)="getAccountsBytiers()" name="origin_country"
+                                                            [(ngModel)]="Ref" class="custom-select form-control">
+                                                            <option Value="" hidden selected> Choisir société </option>
+                                                            <option *ngFor="let c of ListTiers" value={{c.Referentiel}}>
+                                                                  {{c.FullName}} </option>
+
+                                                      </select>
+
+
+
+                                                </div>
+                                                <div class=" col-4 ">
+
+                                                      <div class=" col-2" style="text-align: initial;"
+                                                            class="font-weight-bold TitleMobile">Choisir un compte
+                                                            <span style="color: red;">*</span>
+                                                      </div>
+
+                                                      <select name="origin_country" (change)="getAccountName()"
+                                                            class="custom-select form-control" [(ngModel)]="TypeCompte">
+                                                            <option Value="" hidden selected> Choisir compte </option>
+                                                            <option *ngFor="let c of list0" value={{c.scheme}}>
+                                                                  {{c.scheme}} </option>
+
+                                                      </select>
+
+
+                                                </div>
+
+                                                <div class="col-4">
+
+
+
+                                                      <div class=" col-2" style="text-align: initial;"
+                                                            class="font-weight-bold TitleMobile">Libellés des
+                                                            comptes</div>
+
+                                                      <input value="{{AccounName}}" class="custom-select form-control"
+                                                            disabled>
+
+
+                                                </div>
+
+
+                                          </div>
+
+                                    </div>
+
+                              </div>
+                              <div class="row">
+                                    <div class="col-4">
+
+
+
+                                          <div class=" col-2" style="text-align: initial;"
+                                                class="font-weight-bold TitleMobile">Date Début</div>
+
+                                          <input class="form-control py-2 search" type="date" (keyup)="hidealert()"
+                                                id="datepicker" min={{min}} max={{max}} [(ngModel)]="startDate"
+                                                onkeydown="return false">
+
+
+                                    </div>
+
+                                    <div class="col-4">
+
+
+
+                                          <div class=" col-2" style="text-align: initial;"
+                                                class="font-weight-bold TitleMobile">Date Fin</div>
+
+                                          <input class="form-control py-2 search" type="date" (keyup)="hidealert()"
+                                                min={{min}} max={{max}} [(ngModel)]="EndDate" onkeydown="return false">
+
+
+                                    </div>
+                              </div>
+                              <br>
+                              <div class="row" style="  ">
+                                    <div class="col-9"></div>
+                                    <div class="col-3" style="text-align: end;">
+                                          <button class="btn btn-primary btn-lg" style="height: 43px;"
+                                                (click)="VisualiserExtrait()">Visualiser</button>
+
+                                    </div>
+
+                              </div>
+
+
+
+
+
+                        </div>
+                  </div>
+
+            </div>
+      </div>
+
+      <div id="alertchampsVide" class="alert alert-danger alert-dismissible fade " role="alert">
+            Veuillez remplir toutes les entrées
+      </div>
+
+
+      <div id="alertDateSup" class="alert alert-danger alert-dismissible fade " role="alert">
+            Date de début doit être inférieur ou égale date de fin
+      </div>
+
+      <div style="text-align: center;" *ngIf='loader'>
+
+            <div class="spinner-border text-primary" role="status">
+                  <span class="visually-hidden">Loading...</span>
+            </div>
+      </div>
+
+
+
+      <br>
+      <br>
+
+
+</section>
+
+
+
+<div *ngIf="globaltr.length> 0" class="row">
+  
+      <div class="col-sm-12">
+          <div class="card">
+              <div class="card-header d-flex justify-content-between">
+                  <div class="header-title">
+                      <h4 class="card-title">Liste des Transactions </h4>
+                  </div>
+                 
+              </div>
+              <div class="card-body">
+   
+               <div class="row">
+                   <div class="col-lg-12">
+                       <div class="">
+                           <div class="card-body table-left-bordered">
+                                <div class="custom-table-effect table-responsive mt-3">
+                                    <table class="table table-striped mb-0">
+                                        <thead>
+                                            <tr>
+                                               <th scope="col">N°</th>
+                                                <th scope="col">Montant Global</th>
+                                                <th scope="col">Wallet</th>
+                                                <th scope="col">Date</th>
+                                              
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                           <tr *ngFor="let tr of globaltr; let i = index" style="cursor: pointer;" (click)="showDetails(tr.mp_recv_wallet_numb, tr.purc_date)">
+                                               <td>{{i+1}}</td>
+                                               <td class="text-dark"> <b> {{tr.mp_recv_amnt}}</b> TND</td>
+                                               <td class="text-dark"> <b> {{tr.mp_recv_acco_numb}}</b> </td>
+                                               <td class="text-dark"> <b> {{tr.purc_date}}</b> </td>
+
+                                           </tr>
+                                 
+                                         
+                                       </tbody>
+                                    </table>
+                                </div>
+                           </div>
+                       </div>
+                    </div>
+                </div>
+                
+   
+                 
+              </div>
+          </div>
+      </div>
+
+      <div class="col-sm-12" *ngIf="transactionDetails.length > 0">
+            <div class="card">
+                <div class="card-header d-flex justify-content-between">
+                    <div class="header-title">
+                        <h4 class="card-title">Détail transactions </h4>
+                    </div>
+                   
+                </div>
+                <div class="card-body">
+     
+                 <div class="row">
+                     <div class="col-lg-12">
+                         <div class="">
+                             <div class="card-body table-left-bordered">
+                                  <div class="custom-table-effect table-responsive mt-3">
+                                      <table class="table table-striped mb-0 text-center">
+                                          <thead>
+                                              <tr>
+                                                 <th scope="col">N°</th>
+                                                  <th scope="col">Client</th>
+                                                  <th scope="col">Montant</th>
+                                                  <th scope="col">Temp de transaction</th>
+                                                  <th scope="col">Code authorisation</th>
+                                                  
+                                              </tr>
+                                          </thead>
+                                          <tbody>
+                                             <tr *ngFor="let s of transactionDetails; let i = index">
+                                                 <td>{{i+1}}</td>
+                                                 <td>
+                                                    <b> {{s.issuermsisdn}}</b>
+                                                 </td>
+                                                 <td> <b> {{s.transaction_authorized_amount}}</b></td>
+                                                 <td> <b> {{s.transaction_time}}</b></td>
+                                                 <td> <b> {{s.issuer_authorization_code}}</b></td>
+
+                                             </tr>
+                                   
+                                           
+                                         </tbody>
+                                      </table>
+                                  </div>
+                             </div>
+                         </div>
+                      </div>
+                  </div>
+                  
+     
+                   
+                </div>
+            </div>
+        </div>
+</div>

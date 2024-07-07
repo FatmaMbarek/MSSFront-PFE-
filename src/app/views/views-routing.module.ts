@@ -76,6 +76,7 @@ import { EncaissementArgentComponent } from './encaissement-argent/encaissement-
 import { AuthGuard } from './shared/auth.guard';
 import { ExtraitComponent } from './mabanque/extrait/extrait.component';
 import { RibibanComponent } from './mabanque/ribiban/ribiban.component';
+import { ReconciliationComponent } from './mabanque/reconciliation/reconciliation.component';
 const routes: Routes = [
   // Component Routes
   {
@@ -103,12 +104,18 @@ const routes: Routes = [
     component: RibibanComponent,
     canActivate: [AuthGuard],
     data: {routeName: 'projets.rib-iban', pageTitle:'RIB IBAN'}
+  }, 
+   {
+    path: 'rapprochement',
+    component: ReconciliationComponent,
+    canActivate: [AuthGuard],
+    data: {routeName: 'projets.rib-iban', pageTitle:'RIB IBAN'}
   },
   {
     path: 'projets/projet-add',
     component: ProjetAddComponent,
     canActivate: [AuthGuard],
-    data: {routeName: 'projets.projet-add', pageTitle:'Ajouter Projet'}
+    data: {routeName: 'projets.rapprochement', pageTitle:'Rapprochement '}
   },
   {
     path: 'projets/projet-details',
