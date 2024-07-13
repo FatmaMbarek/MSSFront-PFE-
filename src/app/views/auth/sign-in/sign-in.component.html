@@ -1,96 +1,69 @@
 <section class="login-content">
    <div class="row m-0 align-items-center bg-white vh-100">
-      <div class="col-md-6">
-         <div class="row justify-content-center">
-            <div class="col-md-10">
-               <div class="card card-transparent shadow-none d-flex justify-content-center mb-0 auth-card">
-                  <div class="card-body">
-                     <a [routerLink]="['/dashboard']"
-                        class="navbar-brand d-flex align-items-center mb-5 justify-content-center text-primary">
-                        <!-- <iq-brand-logo></iq-brand-logo> -->
-                        <!-- <svg class="" viewBox="0 0 32 32" width="80px" fill="none" xmlns="http://www.w3.org/2000/svg">
-                           <path fill-rule="evenodd" clip-rule="evenodd" d="M7.25333 2H22.0444L29.7244 15.2103L22.0444 28.1333H7.25333L0 15.2103L7.25333 2ZM11.2356 9.32316H18.0622L21.3334 15.2103L18.0622 20.9539H11.2356L8.10669 15.2103L11.2356 9.32316Z" fill="currentColor"></path>
-                           <path d="M23.751 30L13.2266 15.2103H21.4755L31.9999 30H23.751Z" fill="#3FF0B9"></path>
-                     </svg> -->
-                     <img src="assets/images/logo-full.png" alt="" style="width: 30%;">
-
-                     </a>
-                     <h2 class="mb-2 text-center">Se connecter</h2>
-                     <!-- <div class="mb-3 alert alert-left alert-secondary fade show btn-sm" role="alert" style="text-align: center;">
-                         <span data-target="email">Admin: demo@example.com</span><br><span  data-target="email">Demo: demo@example.com</span><br><span  data-target="email">User: demo@example.com</span><br>
-                         <span >Password: password</span>
-                      </div> -->
-                     <p class="text-center">Connectez-vous pour rester connecté.</p>
-                     <form >
-                        <div class="row">
-                           <div class="col-lg-12">
-                              <div class="form-group">
-                                 <label for="email" class="form-label">Login</label>
-                                 <input type="email" [(ngModel)]="FormLogin.login" class="form-control" id="email" name="email" aria-describedby="email"
-                                    placeholder="Login">
-                              </div>
-                           </div>
-                           <div class="col-lg-12">
-                              <div class="form-group">
-                                 <label for="password" class="form-label">Mot de passe</label>
-                                 <input type="password"  [(ngModel)]="FormLogin.password" class="form-control" id="password" name="password" aria-describedby="password"
-                                    placeholder=" Mot de passe">
-                              </div>
-                           </div>
-                           <div class="col-lg-12 d-flex justify-content-between">
-                              <div class="form-check mb-3">
-                                 <input type="checkbox" class="form-check-input" id="customCheck1">
-                                 <label class="form-check-label" for="customCheck1">Se souvenir de moi</label>
-                              </div>
-                              <!-- <a href="#">Mot de passe oublié ?</a> -->
-                           </div>
-                        </div>
-                        <div class="d-flex justify-content-center">
-                           <button type="submit" class="btn btn-primary" (click)="login()" >Se connecter</button>
-                        </div>
-                        <!-- <p class="text-center my-3">or sign in with other accounts?</p>
-                        <div class="d-flex justify-content-center">
-                           <ul class="list-group list-group-horizontal list-group-flush">
-                              <li class="list-group-item border-0 pb-0">
-                                 <a href="#"><img src="assets/images/brands/fb.svg" alt="fb" loading="lazy"></a>
-                              </li>
-                              <li class="list-group-item border-0 pb-0">
-                                 <a href="#"><img src="assets/images/brands/gm.svg" alt="gm" loading="lazy"></a>
-                              </li>
-                              <li class="list-group-item border-0 pb-0">
-                                 <a href="#"><img src="assets/images/brands/im.svg" alt="im" loading="lazy"></a>
-                              </li>
-                              <li class="list-group-item border-0 pb-0">
-                                 <a href="#"><img src="assets/images/brands/li.svg" alt="li" loading="lazy"></a>
-                              </li>
-                           </ul>
-                        </div> -->
-                        <!-- <p class="mt-3 text-center">
-                           Vous n'avez pas de compte ? <a href="#" class="text-underline"
-                              [routerLink]="['/auth/sign-up']">Cliquez ici pour vous inscrire.</a>
-                        </p> -->
-                     </form>
-                  </div>
+       <div class="col-md-6">
+           <div class="row justify-content-center">
+               <div class="col-md-10">
+                   <div class="card card-transparent shadow-none d-flex justify-content-center mb-0 auth-card">
+                       <div class="card-body">
+                           <a [routerLink]="['/dashboard']" class="navbar-brand d-flex align-items-center mb-5 justify-content-center text-primary">
+                               <img src="assets/images/logo-full.png" alt="" style="width: 30%;">
+                           </a>
+                           <div class="text-center"><b>Commerçant</b></div>
+                           <br>
+                           <h2 class="mb-2 text-center">Se connecter</h2>
+                           <p class="text-center">Connectez-vous pour rester connecté.</p>
+                           <form>
+                               <div class="row">
+                                   <div class="col-lg-12">
+                                       <div class="form-group">
+                                           <label for="email" class="form-label">Login</label>
+                                           <input type="email" [(ngModel)]="FormLogin.login" class="form-control" id="email" name="email" aria-describedby="email" placeholder="Login">
+                                       </div>
+                                   </div>
+                                   <div class="col-lg-12">
+                                       <div class="form-group">
+                                           <label for="password" class="form-label">Mot de passe</label>
+                                           <div class="input-group">
+                                               <input type="password" [(ngModel)]="FormLogin.password" class="form-control" id="password" name="password" aria-describedby="password" placeholder="Mot de passe">
+                                               <div class="input-group-append">
+                                                   <span class="input-group-text" id="togglePassword">
+                                                       <svg class="icon-32" width="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                           <path opacity="0.4" fill-rule="evenodd" clip-rule="evenodd" d="M17.7366 6.04606C19.4439 7.36388 20.8976 9.29455 21.9415 11.7091C22.0195 11.8924 22.0195 12.1067 21.9415 12.2812C19.8537 17.1103 16.1366 20 12 20H11.9902C7.86341 20 4.14634 17.1103 2.05854 12.2812C1.98049 12.1067 1.98049 11.8924 2.05854 11.7091C4.14634 6.87903 7.86341 4 11.9902 4H12C14.0683 4 16.0293 4.71758 17.7366 6.04606ZM8.09756 12C8.09756 14.1333 9.8439 15.8691 12 15.8691C14.1463 15.8691 15.8927 14.1333 15.8927 12C15.8927 9.85697 14.1463 8.12121 12 8.12121C9.8439 8.12121 8.09756 9.85697 8.09756 12Z" fill="currentColor"></path>
+                                                           <path d="M14.4308 11.997C14.4308 13.3255 13.3381 14.4115 12.0015 14.4115C10.6552 14.4115 9.5625 13.3255 9.5625 11.997C9.5625 11.8321 9.58201 11.678 9.61128 11.5228H9.66006C10.743 11.5228 11.621 10.6695 11.6601 9.60184C11.7674 9.58342 11.8845 9.57275 12.0015 9.57275C13.3381 9.57275 14.4308 10.6588 14.4308 11.997Z" fill="currentColor"></path>
+                                                       </svg>
+                                                   </span>
+                                               </div>
+                                           </div>
+                                       </div>
+                                   </div>
+                                   <div class="col-lg-12 d-flex justify-content-between">
+                                       <div class="form-check mb-3">
+                                           <input type="checkbox" class="form-check-input" id="customCheck1">
+                                           <label class="form-check-label" for="customCheck1">Se souvenir de moi</label>
+                                       </div>
+                                   </div>
+                               </div>
+                               <div class="d-flex justify-content-center">
+                                   <button type="submit" class="btn btn-primary" (click)="login()">Se connecter</button>
+                               </div>
+                           </form>
+                       </div>
+                   </div>
                </div>
-            </div>
-         </div>
-         <div class="sign-bg">
-            <svg width="280" height="230" viewBox="0 0 431 398" fill="none" xmlns="http://www.w3.org/2000/svg">
-               <g opacity="0.05">
-                  <rect x="-157.085" y="193.773" width="543" height="77.5714" rx="38.7857"
-                     transform="rotate(-45 -157.085 193.773)" fill="#3B8AFF" />
-                  <rect x="7.46875" y="358.327" width="543" height="77.5714" rx="38.7857"
-                     transform="rotate(-45 7.46875 358.327)" fill="#3B8AFF" />
-                  <rect x="61.9355" y="138.545" width="310.286" height="77.5714" rx="38.7857"
-                     transform="rotate(45 61.9355 138.545)" fill="#3B8AFF" />
-                  <rect x="62.3154" y="-190.173" width="543" height="77.5714" rx="38.7857"
-                     transform="rotate(45 62.3154 -190.173)" fill="#3B8AFF" />
-               </g>
-            </svg>
-         </div>
-      </div>
-      <div class="col-md-6 d-md-block d-none bg-primary p-0 vh-100 overflow-hidden">
-         <img src="assets/images/auth/01.png" class="img-fluid gradient-main " alt="images" loading="lazy">
-      </div>
+           </div>
+           <div class="sign-bg">
+               <svg width="280" height="230" viewBox="0 0 431 398" fill="none" xmlns="http://www.w3.org/2000/svg">
+                   <g opacity="0.05">
+                       <rect x="-157.085" y="193.773" width="543" height="77.5714" rx="38.7857" transform="rotate(-45 -157.085 193.773)" fill="#3B8AFF" />
+                       <rect x="7.46875" y="358.327" width="543" height="77.5714" rx="38.7857" transform="rotate(-45 7.46875 358.327)" fill="#3B8AFF" />
+                       <rect x="61.9355" y="138.545" width="310.286" height="77.5714" rx="38.7857" transform="rotate(45 61.9355 138.545)" fill="#3B8AFF" />
+                       <rect x="62.3154" y="-190.173" width="543" height="77.5714" rx="38.7857" transform="rotate(45 62.3154 -190.173)" fill="#3B8AFF" />
+                   </g>
+               </svg>
+           </div>
+       </div>
+       <div class="col-md-6 d-md-block d-none bg-primary p-0 vh-100 overflow-hidden">
+           <img src="assets/images/auth/01.png" class="img-fluid gradient-main" alt="images" loading="lazy">
+       </div>
    </div>
 </section>
