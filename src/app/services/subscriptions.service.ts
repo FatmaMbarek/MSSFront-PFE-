@@ -6,7 +6,9 @@ import { Observable, catchError, retry, throwError } from 'rxjs';
   providedIn: 'root'
 })
 export class SubscriptionsService {
-  private baseUrl = 'http://98.66.226.14/api';
+  // private baseUrl = 'http://98.66.226.14/api';
+  private baseUrl = 'http://98.66.251.11/api';
+  
   private baseUrlOpenbank = 'https://openbank.stb.com.tn/';
 
   constructor(private http: HttpClient) { }
